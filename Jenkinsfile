@@ -24,7 +24,7 @@ pipeline {
             steps {
                 echo 'Deploying...'
                 echo "$GREETING"
-                env
+                echo "$env"
             }
         }
     }
