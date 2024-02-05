@@ -5,9 +5,14 @@ pipeline {
             
         }
     }
-
+    
      environment { 
         GREETING = 'Hello Jenkins'
+    }
+
+    options {
+        timeout(time: 1, unit: 'HOURS')
+        disableConcurrentBuilds()
     }
     stages {
         stage('Build') {
@@ -24,7 +29,7 @@ pipeline {
             steps {
                 echo 'Deploying...'
                 echo "$GREETING"
-                echo "$env"
+                // echo "$env"
             }
         }
     }
